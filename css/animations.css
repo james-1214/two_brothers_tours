@@ -1,0 +1,5 @@
+.lane{animation:road 1.2s linear infinite}@keyframes road{to{transform:translateY(20%)}}
+.sun{animation:pulse 4s ease-in-out infinite}@keyframes pulse{50%{box-shadow:0 0 90px var(--mg)}}
+.glow{animation:head 2.4s ease-in-out infinite}@keyframes head{50%{opacity:.55}}
+.glass{animation:float 5s ease-in-out infinite}.g2{animation-delay:-1.5s}.g3{animation-delay:-3s}@keyframes float{50%{transform:translateY(-10px)}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}

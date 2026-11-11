@@ -1,0 +1,23 @@
+#gallery .gal-bar{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;margin:1.6rem 0 1rem}
+.chip{font:600 .85rem Sora,sans-serif;padding:.5rem 1rem;border-radius:999px;border:1.5px solid #c9d8ee;background:#fff;color:var(--navy);cursor:pointer;transition:.2s}
+.chip:hover{border-color:var(--cy)}.chip.on{background:var(--navy);color:#fff;border-color:var(--navy);box-shadow:0 0 0 2px var(--cy)}
+#gal-count{margin:0 0 1.2rem;font-size:.9rem;color:#4b5b75}
+#gal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.gal-card{position:relative;display:block;padding:0;border:0;border-radius:16px;overflow:hidden;aspect-ratio:4/3;cursor:pointer;background:linear-gradient(135deg,#10233F,#1b5a7a 60%,#2c8f6b);text-align:left;box-shadow:0 6px 18px rgba(16,35,63,.12);transition:transform .3s,box-shadow .3s}
+.gal-card:hover,.gal-card:focus-visible{transform:translateY(-4px);box-shadow:0 14px 28px rgba(16,35,63,.22)}
+.gal-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.gal-card:hover img{transform:scale(1.06)}
+.gal-ph{position:absolute;inset:0;display:grid;place-items:center}.gal-ph b{font:800 4rem Sora,sans-serif;color:rgba(255,255,255,.14)}
+.has-img .gal-ph{display:none}
+.gal-cap{position:absolute;left:0;right:0;bottom:0;padding:2.2rem .9rem .7rem;color:#fff;background:linear-gradient(0deg,rgba(5,18,34,.85),transparent);display:grid;gap:.1rem}
+.gal-cap strong{font:600 .95rem/1.25 Sora,sans-serif}.gal-cap small{font-size:.75rem;opacity:.85}
+#gal-box{position:fixed;inset:0;z-index:120;background:rgba(5,12,24,.92);display:grid;place-items:center;padding:1rem}
+#gal-box[hidden]{display:none}
+#gal-box figure{margin:0;max-width:min(1100px,92vw);display:grid;gap:.8rem;justify-items:center}
+#gal-box img{max-width:100%;max-height:78vh;border-radius:12px;object-fit:contain;background:#0b1a2e}
+#gal-box figcaption{color:#fff;text-align:center;font-size:.95rem}#gal-box figcaption a{color:var(--cy);font-size:.8rem}
+#gal-box button{position:absolute;border:0;background:rgba(255,255,255,.14);color:#fff;width:46px;height:46px;border-radius:50%;font-size:1.5rem;cursor:pointer}
+#gal-box button:hover{background:rgba(255,255,255,.3)}
+.gb-close{top:16px;right:16px}.gb-prev{left:16px;top:50%}.gb-next{right:16px;top:50%}
+.gal-note{margin-top:1.4rem;font-size:.82rem;color:#4b5b75}
+@media(max-width:560px){#gal-grid{grid-template-columns:1fr 1fr;gap:10px}.gal-cap strong{font-size:.8rem}.gal-cap small{display:none}.gb-prev,.gb-next{top:auto;bottom:18px}}

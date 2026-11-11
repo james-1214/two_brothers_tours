@@ -1,0 +1,6 @@
+IMAGE ASSETS NOTE
+- Vehicle and destination visuals in this project include AI-generated illustrative imagery.
+- The white Swift rental card image has been replaced with a new, clearer AI-generated Swift visual.
+- Destination cards use the supplied landscape assets: mountains, coffee plantation, waterfall, forest road, viewpoint and forest stream.
+- These are illustrative images, not verified photographs of the customer's actual vehicles or exact locations.
+- Before publishing, replace vehicle images with photos of the actual rental cars and use licensed/owned destination photographs if documentary accuracy is required.
