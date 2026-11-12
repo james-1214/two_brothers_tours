@@ -21,7 +21,17 @@ if(matchMedia('(hover:hover)').matches){
  q('.tilt').forEach(c=>{c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;gsap.to(c,{rotateY:x*10,rotateX:-y*10,transformPerspective:900,duration:.4});});c.addEventListener('pointerleave',()=>gsap.to(c,{rotateX:0,rotateY:0,duration:.6}));});
  q('.magnetic').forEach(b=>{b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();gsap.to(b,{x:(e.clientX-r.left-r.width/2)*.25,y:(e.clientY-r.top-r.height/2)*.35,duration:.3});});b.addEventListener('pointerleave',()=>gsap.to(b,{x:0,y:0,duration:.5,ease:'elastic.out(1,.5)'}));});}
 
-const links=[...q('#menu a')],secs=links.map(l=>document.querySelector(l.getAttribute('href')));
-secs.forEach((s,i)=>s&&ScrollTrigger.create({trigger:s,start:'top 50%',end:'bottom 50%',onToggle:v=>v&&links.forEach((l,k)=>l.classList.toggle('active',k===i))}));
+// Only in-page anchors are CSS selectors. External links (for example WhatsApp)
+// must never be passed to querySelector(). Keep each link paired with its section.
+const navSections=[...q('#menu a')].map(link=>{
+ const href=link.getAttribute('href')||'';
+ if(!href.startsWith('#')||href.length<2)return null;
+ const section=document.getElementById(decodeURIComponent(href.slice(1)));
+ return section?{link,section}:null;
+}).filter(Boolean);
+navSections.forEach(({link,section})=>ScrollTrigger.create({
+ trigger:section,start:'top 50%',end:'bottom 50%',
+ onToggle:self=>{if(self.isActive)navSections.forEach(item=>item.link.classList.toggle('active',item.link===link));}
+}));
 q('.dcard').forEach((c,i)=>gsap.from(c,{autoAlpha:0,y:40,duration:.8,delay:(i%3)*.1,scrollTrigger:{trigger:c,start:'top 90%'}}));
 })();

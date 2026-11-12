@@ -5,3 +5,5 @@ Run with VS Code Live Server or `python3 -m http.server`. Needs internet for GSA
 - Enquiries open WhatsApp (+91 88675 70388); they are not confirmed bookings.
 - Gallery: 100 Karnataka places in js/gallery.js. Photos load live from Wikimedia Commons/Wikipedia (landscape photos preferred, with a Commons search fallback); add your own via gallery/manifest.json (see gallery/README.txt). Needs internet.
 - Tour cards try real photos for Mullayanagiri, Chikkamagaluru, Jog Falls, Agumbe, Kemmangundi, Kudremukh (edit TOUR in js/gallery.js); the AI images stay as fallback.
+
+- Fixed navigation scroll animations: external links such as WhatsApp are excluded from section selector lookup, preventing querySelector syntax errors.
